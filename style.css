@@ -1,0 +1,110 @@
+:root {
+    --background: #0A0908;
+    --primary-color: #77867F;
+    --secondary-color: #3943B7;
+    --details: #EF626C; 
+}
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+h1 {
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    color: var(--secondary-color)
+}
+main {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    background-color: var(--background);
+}
+.random-dog {
+    width: 50%;
+    padding: 10px;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 20px;
+    overflow-y: scroll;
+}
+.random-section-title, 
+.fav-dogs-title {
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+button {
+    display: block;
+    width: 150px;
+    padding: 6px 0;
+    margin: 20px auto;
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: bold;
+    border: 2px solid orange;
+    background: white;
+    color: orange;
+    border-radius: 10px;
+    transition: 450ms all ease;
+    cursor: pointer;
+  }
+.container article {
+    width: 250px;
+    height: 370px;
+    padding: 8px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 20px;
+}
+.img-container {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+}
+.img-container img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+}
+.favorite-btn {
+    background: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 1px solid var(--primary-color);
+    transition: border 450ms ease;
+    cursor: pointer;
+}
+.favorite-btn i {
+    margin: auto;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--primary-color);
+    transition: border 450ms ease;
+}
+.favorite-btn:hover i{
+    color: var(--details);
+}
+
+::-webkit-scrollbar {
+    background-color: var(--primary-color);
+    width: 10px;
+    border-radius: 100vw;
+}
+
+.favorite-dog-container {
+    padding: 10px;
+}
