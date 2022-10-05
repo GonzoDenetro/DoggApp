@@ -24,6 +24,9 @@ main {
     display: flex;
     background-color: var(--background);
 }
+.error {
+    color: white;
+}
 .random-dog {
     width: 50%;
     padding: 10px;
