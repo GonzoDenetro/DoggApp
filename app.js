@@ -14,10 +14,6 @@ let btn = document.querySelector('button');
 let fv_btn = document.querySelector('.btn-1');
 
 
-fv_btn.addEventListener('click', function(){
-  saveAsAFavorite()
-})
-
 btn.addEventListener('click', function(){
   fetchData()
 })
@@ -42,6 +38,10 @@ async function fetchData(){
 
         console.log('ID:');
         console.log(data[1].id);
+
+        fv_btn.addEventListener('click', function(){
+          saveAsAFavorite(data[0].id)
+        })
     }
 }
 
@@ -56,14 +56,14 @@ async function loadFavorites(){
 }
 
 //FUNCIÓN PARA GUARDAR UN PERRO EN FAVORITOS, PARA ENVIAR AL BACKEN NUESTROS FAVORITOS
-async function saveAsAFavorite(){
+async function saveAsAFavorite(id){
   let response = await fetch(URL_COMPLETE, {
     method: "POST",
     headers: {
       'Content-Type': 'application/json', //Indicamos el tipo de información que estamos esperando
     },
     body: JSON.stringify({
-            image_id: 'Q6H9UcRZB' //Le decimos al backend la información que le vamos a enviar
+            image_id: id //Le decimos al backend la información que le vamos a enviar
     })
   })
 
@@ -71,7 +71,7 @@ async function saveAsAFavorite(){
 
   console.log("Respuesta del servidor de cuando guardamos en favoritos")
   console.log(response)
-  
+
   if(response.status !== 200){
     spanError.innerHTML = `ERROR ${response.status} ${data.message}`;
   }
